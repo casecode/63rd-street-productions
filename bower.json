@@ -1,0 +1,10 @@
+{
+  "name": "sixty-third",
+  "dependencies": {
+    "angular": "*",
+    "angular-route": "*",
+    "angular-resource": "*",
+    "angular-mocks": "*",
+    "angular-ui-bootstrap-bower": "*"
+  }
+}
