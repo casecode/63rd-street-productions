@@ -13,6 +13,9 @@ gem 'mongoid', github: 'mongoid/mongoid'
 # Use active_model_serializers for Rails API
 gem "active_model_serializers"
 
+# Use angular-rails-templates to add templates to $templateCache using Rails asset pipeline
+gem 'angular-rails-templates'
+
 # Use Uglifier as compressor for JavaScript assets
 # gem 'uglifier', '>= 1.3.0'
 

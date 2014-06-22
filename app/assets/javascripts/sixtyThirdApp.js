@@ -1,4 +1,4 @@
-var app = angular.module('sixtyThirdApp', ['ngResource']);
+var app = angular.module('sixtyThirdApp', ['ngResource', 'templates']);
 
 app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
     // Add CSRF Token to all API request to accommodate Rails' built in CSRF protection
