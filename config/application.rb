@@ -32,7 +32,7 @@ module SixtyThird
 
     # Have Devise only respond to json
     config.to_prepare do
-      DeviseController.respond_to :json
+      DeviseController.respond_to :html, :json
     end
   end
 end

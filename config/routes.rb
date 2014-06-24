@@ -6,12 +6,14 @@ Rails.application.routes.draw do
   # Add route for robots
   get '/robots.txt' => 'robots#set_robots'
 
-  # For simplicity, use default Devise routes outside of api namespace
-  # This will also help ensure compatibility with angular_devise library
-  devise_for :users, defaults: {format: :json}
-
   namespace :api, defaults: {format: :json} do
     resources :users
   end
 
+  devise_for :users, :skip => [:sessions, :registrations]
+  as :user do
+    get 'login' => 'devise/sessions#new', :as => :new_user_session
+    post 'login' => 'devise/sessions#create', :as => :user_session
+    delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+  end
 end
