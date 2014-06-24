@@ -1,0 +1,3 @@
+publicApp.controller('MainCtrl', function() {
+
+});

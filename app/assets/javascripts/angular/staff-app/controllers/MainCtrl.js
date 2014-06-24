@@ -1,0 +1,3 @@
+staffApp.controller('MainCtrl', function() {
+
+});
