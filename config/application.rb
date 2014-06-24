@@ -29,5 +29,10 @@ module SixtyThird
 
     # Use bower to manage front-end dependencies
     config.assets.paths << Rails.root.join("vendor","assets","bower_components")
+
+    # Have Devise only respond to json
+    config.to_prepare do
+      DeviseController.respond_to :json
+    end
   end
 end
