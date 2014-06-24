@@ -1,3 +1,6 @@
+//= require_self
+//= require_tree ./public-app
+
 var publicApp = angular.module('publicApp', ['ngResource', 'ngRoute', 'templates']);
 
 publicApp.config(['$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
@@ -7,7 +10,7 @@ publicApp.config(['$httpProvider', '$routeProvider', function($httpProvider, $ro
 
     $routeProvider
         .when('/', {
-            templateUrl: 'public-app/home.html',
+            templateUrl: 'public/home.html',
             controller: 'HomeCtrl'
         });
 }]);

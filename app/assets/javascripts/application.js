@@ -20,7 +20,3 @@
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.js
 //= require angular-rails-templates
 //= require_tree ../templates
-//= require publicApp
-//= require staffApp
-//= require_tree ./angular
-//= require_tree .

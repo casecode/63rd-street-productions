@@ -1,3 +1,6 @@
+//= require_self
+//= require_tree ./staff-app
+
 var staffApp = angular.module('staffApp', ['ngResource', 'ngRoute', 'templates']);
 
 staffApp.config(['$httpProvider', '$locationProvider', '$routeProvider', function($httpProvider, $locationProvider, $routeProvider) {
@@ -7,7 +10,7 @@ staffApp.config(['$httpProvider', '$locationProvider', '$routeProvider', functio
 
     $routeProvider
         .when('/', {
-            templateUrl: 'staff-app/staff.html',
-            controller: 'StaffCtrl'
+            templateUrl: 'staff/staff-home.html',
+            controller: 'HomeCtrl'
         });
 }]);
