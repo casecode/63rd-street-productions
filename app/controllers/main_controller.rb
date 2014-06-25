@@ -1,11 +1,19 @@
 class MainController < ApplicationController
-  def index
+
+  def home
     respond_to do |format|
-      unless current_user.present?
-        format.html {render :public_index, :layout => 'public'}
-      else
-        format.html {render :staff_index, :layout => 'staff'}
-      end
+      format.html
     end
+  end
+
+  def dashboard
+    respond_to do |format|
+      format.html {render :layout => 'dashboard'}
+    end
+  end
+
+  def robots
+    robots = File.read(Rails.root + "config/robots/robots.#{Rails.env}.txt")
+    render :text => robots, :layout => false, :content_type => "text/plain"
   end
 end
