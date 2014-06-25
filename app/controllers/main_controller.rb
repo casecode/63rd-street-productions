@@ -1,14 +1,11 @@
 class MainController < ApplicationController
-
-  def public
+  def index
     respond_to do |format|
-      format.html {render :layout => 'public'}
-    end
-  end
-
-  def staff
-    respond_to do |format|
-      format.html {render :layout => 'staff'}
+      unless current_user.present?
+        format.html {render :public_index, :layout => 'public'}
+      else
+        format.html {render :staff_index, :layout => 'staff'}
+      end
     end
   end
 end

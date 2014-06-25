@@ -1,8 +1,8 @@
 class User
   include Mongoid::Document
   # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
+  # :registerable, :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable,
          :recoverable, :rememberable, :trackable, :validatable
 
   ## Custom Fields
@@ -37,4 +37,12 @@ class User
   # field :failed_attempts, type: Integer, default: 0 # Only if lock strategy is :failed_attempts
   # field :unlock_token,    type: String # Only if unlock strategy is :email or :both
   # field :locked_at,       type: Time
+
+  # Stringify BSON::ObjectID for Mongoid compatibility with Devise
+  class << self
+    def serialize_from_session(key, salt)
+      record = to_adapter.get(key.to_s)
+      record if record && record.authenticatable_salt == salt
+    end
+  end
 end
