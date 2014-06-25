@@ -1,7 +1,7 @@
-staffApp.controller('HomeCtrl', function($http) {
+dashboard.controller('HomeCtrl', function($http) {
     var _this = this;
 
-    this.test = "Testing STAFF HOME";
+    this.test = "Testing DASHBOARD HOME";
 
     this.user = {}
 

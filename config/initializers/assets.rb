@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( publicApp.js public-app/* staffApp.js staff-app/* )
+Rails.application.config.assets.precompile += %w( sixty-third.js dashboard.js angular-devise/lib/devise-min.js )

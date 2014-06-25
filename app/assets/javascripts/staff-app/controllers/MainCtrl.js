@@ -1,3 +1,0 @@
-staffApp.controller('MainCtrl', function() {
-
-});

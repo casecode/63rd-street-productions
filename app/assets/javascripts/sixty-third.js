@@ -1,16 +1,16 @@
 //= require_self
-//= require_tree ./staff-app
+//= require_tree ./sixty-third-app
 
-var staffApp = angular.module('staffApp', ['ngResource', 'ngRoute', 'templates']);
+var app = angular.module('sixtyThirdApp', ['ngResource', 'ngRoute', 'templates']);
 
-staffApp.config(['$httpProvider', '$locationProvider', '$routeProvider', function($httpProvider, $locationProvider, $routeProvider) {
+app.config(['$httpProvider', '$routeProvider', function($httpProvider, $routeProvider) {
     // Add CSRF Token to all API request to accommodate Rails' built in CSRF protection
     var authToken = $("meta[name=\"csrf-token\"]").attr("content");
     $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
 
     $routeProvider
         .when('/', {
-            templateUrl: 'staff/staff-home.html',
+            templateUrl: 'sixty-third/home.html',
             controller: 'HomeCtrl'
         });
 }]);

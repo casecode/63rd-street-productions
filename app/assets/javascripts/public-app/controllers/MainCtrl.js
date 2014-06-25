@@ -1,3 +1,0 @@
-publicApp.controller('MainCtrl', function() {
-
-});

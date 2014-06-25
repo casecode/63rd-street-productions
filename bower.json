@@ -5,6 +5,7 @@
     "angular-route": "*",
     "angular-resource": "*",
     "angular-mocks": "*",
-    "angular-ui-bootstrap-bower": "*"
+    "angular-ui-bootstrap-bower": "*",
+    "angular-devise": "*"
   }
 }
