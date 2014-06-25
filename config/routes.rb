@@ -1,16 +1,17 @@
 Rails.application.routes.draw do
 
   root 'main#index'
+  get '/dashboard' => 'main#dashboard'
   get '/robots.txt' => 'robots#set_robots'
 
   namespace :api, defaults: {format: :json} do
     resources :users
   end
 
-  devise_for :users, :skip => [:sessions, :registrations]
+  devise_for :users, :skip => [:sessions, :registrations, :passwords]
   as :user do
-    get 'login' => 'devise/sessions#new', :as => :new_user_session
-    post 'login' => 'devise/sessions#create', :as => :user_session
-    delete 'logout' => 'devise/sessions#destroy', :as => :destroy_user_session
+    post '/dashboard/login' => 'devise/sessions#create', defaults: {format: :json}, :as => :user_session
+    delete '/dashboard/logout' => 'devise/sessions#destroy', defaults: {format: :json}, :as => :destroy_user_session
   end
+
 end
