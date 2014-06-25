@@ -18,5 +18,6 @@
 //= require angular-route/angular-route.min
 //= require angular-ui-bootstrap-bower/ui-bootstrap.min
 //= require angular-ui-bootstrap-bower/ui-bootstrap-tpls.min
+//= require ng-rails-csrf
 //= require angular-rails-templates
 //= require_tree ../templates

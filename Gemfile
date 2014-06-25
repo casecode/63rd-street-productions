@@ -19,6 +19,9 @@ gem 'angular-rails-templates'
 # Use devise for user authentication
 gem 'devise'
 
+# Use ng-rails-csrf to add CSRF headers to all http requests
+gem 'ng-rails-csrf'
+
 # Use Uglifier as compressor for JavaScript assets
 # gem 'uglifier', '>= 1.3.0'
 

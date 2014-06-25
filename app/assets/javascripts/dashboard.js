@@ -6,7 +6,8 @@ var dashboard = angular.module('dashboardApp', [
     'ngResource',
     'ngRoute',
     'templates',
-    'Devise'
+    'Devise',
+    'ng-rails-csrf'
 ]);
 
 dashboard.config([
@@ -16,8 +17,9 @@ dashboard.config([
     function($httpProvider, AuthProvider, $routeProvider) {
 
         // Add CSRF Token to all API requests for compatibility with Rails CSRF protection
-        var authToken = $("meta[name=\"csrf-token\"]").attr("content");
-        $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
+        // var authToken = $("meta[name=\"csrf-token\"]").attr("content");
+        // $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
+        // $httpProvider.defaults.headers.common['X-CSRF-Token'] = angular.element('meta[name=csrf-token]').attr('content');
 
         // Configure AngularDevise AuthProvider
         AuthProvider.loginPath('/dashboard/login.json')

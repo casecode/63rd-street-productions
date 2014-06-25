@@ -1,3 +1,0 @@
-dashboard.controller('MainCtrl', function() {
-
-});
