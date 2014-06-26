@@ -4,8 +4,8 @@
     "angular": "*",
     "angular-route": "*",
     "angular-resource": "*",
+    "angular-cookies": "*",
     "angular-mocks": "*",
-    "angular-ui-bootstrap-bower": "*",
-    "angular-devise": "*"
+    "angular-ui-bootstrap-bower": "*"
   }
 }

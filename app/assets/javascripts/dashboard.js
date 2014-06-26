@@ -1,10 +1,11 @@
-//= require angular-devise/lib/devise-min.js
+//= require angular-cookies/angular-cookies.min
 //= require_self
 //= require_tree ./dashboard-app
 
 var dashboard = angular.module('dashboardApp', [
     'ngResource',
     'ngRoute',
+    'ngCookies',
     'templates',
     'Devise',
     'ng-rails-csrf'
@@ -15,11 +16,6 @@ dashboard.config([
     'AuthProvider',
     '$routeProvider',
     function($httpProvider, AuthProvider, $routeProvider) {
-
-        // Add CSRF Token to all API requests for compatibility with Rails CSRF protection
-        // var authToken = $("meta[name=\"csrf-token\"]").attr("content");
-        // $httpProvider.defaults.headers.common["X-CSRF-TOKEN"] = authToken;
-        // $httpProvider.defaults.headers.common['X-CSRF-Token'] = angular.element('meta[name=csrf-token]').attr('content');
 
         // Configure AngularDevise AuthProvider
         AuthProvider.loginPath('/dashboard/login.json')
