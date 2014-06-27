@@ -1,13 +1,25 @@
-dashboard.controller('MainCtrl', ['deviseAuth', function(deviseAuth) {
+dashboard.controller('MainCtrl', ['deviseAuth', '$cookieStore', function(deviseAuth, $cookieStore) {
     var _this = this;
 
+    _this.cookieAuthComplete = false;
     _this.loggedIn = false;
-    _this.userCreds = {}
+    _this.userCreds = {};
+
+    var cookieCreds = $cookieStore.get('userCreds');
+    if (cookieCreds) {
+        deviseAuth.isAuthenticated().then(function(user) {
+            _this.loggedIn = true;
+            _this.cookieAuthComplete = true;
+        }, function(error) {
+            _this.cookieAuthComplete = true;
+        });
+    } else {
+        _this.cookieAuthComplete = true;
+    }
 
     _this.login = function() {
         deviseAuth.login(_this.userCreds).then(function(user) {
             _this.loggedIn = true;
-            console.log(user)
         }, function(error) {
             console.log(error);
         });
@@ -16,6 +28,7 @@ dashboard.controller('MainCtrl', ['deviseAuth', function(deviseAuth) {
     _this.logout = function() {
         deviseAuth.logout().then(function(message) {
             _this.loggedIn = false;
+            _this.userCreds = {};
             alert(message);
         }, function(error) {
             console.log(error);
