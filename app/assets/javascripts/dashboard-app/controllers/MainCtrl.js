@@ -1,15 +1,24 @@
 dashboard.controller('MainCtrl', ['deviseAuth', function(deviseAuth) {
-    var main = this;
+    var _this = this;
 
-    var creds = {
-        email: 'casey.r.white@gmail.com',
-        password: 'password'
-    }
+    _this.loggedIn = false;
+    _this.userCreds = {}
 
-    deviseAuth.login(creds)
-        .then(function(user) {
-            console.log(user);
+    _this.login = function() {
+        deviseAuth.login(_this.userCreds).then(function(user) {
+            _this.loggedIn = true;
+            console.log(user)
         }, function(error) {
             console.log(error);
         });
+    };
+
+    _this.logout = function() {
+        deviseAuth.logout().then(function(message) {
+            _this.loggedIn = false;
+            alert(message);
+        }, function(error) {
+            console.log(error);
+        });
+    };
 }]);

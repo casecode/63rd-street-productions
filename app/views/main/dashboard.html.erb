@@ -1,3 +1,13 @@
 <div ng-controller="MainCtrl as main">
-  <div ng-view></div>
+
+  <form novalidate class="simple-form" ng-hide="main.loggedIn">
+    E-mail: <input type="email" ng-model="main.userCreds.email" /><br />
+    Password: <input type="password" ng-model="main.userCreds.password" /><br />
+    <button ng-click="main.login()">SIGN IN</button>
+  </form>
+
+  <button ng-show="main.loggedIn" ng-click="main.logout()">SIGN OUT</button>
+
+  <div ng-view ng-show="main.loggedIn"></div>
+
 </div>

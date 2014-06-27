@@ -6,8 +6,7 @@ var dashboard = angular.module('dashboardApp', [
     'ngResource',
     'ngRoute',
     'ngCookies',
-    'templates',
-    'ng-rails-csrf'
+    'templates'
 ]);
 
 dashboard.config([
