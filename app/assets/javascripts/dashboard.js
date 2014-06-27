@@ -7,20 +7,12 @@ var dashboard = angular.module('dashboardApp', [
     'ngRoute',
     'ngCookies',
     'templates',
-    'Devise',
     'ng-rails-csrf'
 ]);
 
 dashboard.config([
-    '$httpProvider',
-    'AuthProvider',
     '$routeProvider',
-    function($httpProvider, AuthProvider, $routeProvider) {
-
-        // Configure AngularDevise AuthProvider
-        AuthProvider.loginPath('/dashboard/login.json')
-        AuthProvider.logoutPath('/dashboard/logout.json')
-
+    function($routeProvider) {
         // Configure routes relative to Rails dashboard_path,
         // i.e. Angular root is at '/dashboard#/'
         $routeProvider

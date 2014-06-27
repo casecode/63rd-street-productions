@@ -1,9 +1,15 @@
-dashboard.controller('MainCtrl', ['$cookieStore', function($cookieStore) {
+dashboard.controller('MainCtrl', ['deviseAuth', function(deviseAuth) {
     var main = this;
 
-    // $cookieStore.put('myKey', 'myValue');
-    // var myVal = $cookieStore.get('myKey');
-    // console.log(myVal);
-    // $cookieStore.remove('myKey');
+    var creds = {
+        email: 'casey.r.white@gmail.com',
+        password: 'password'
+    }
 
+    deviseAuth.login(creds)
+        .then(function(user) {
+            console.log(user);
+        }, function(error) {
+            console.log(error);
+        });
 }]);
