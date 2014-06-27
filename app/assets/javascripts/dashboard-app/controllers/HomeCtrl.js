@@ -3,21 +3,19 @@ dashboard.controller('HomeCtrl', function($http) {
 
     this.test = "Testing DASHBOARD HOME";
 
+    // Example of how to add a user to the DB
+    //
     // this.user = {}
     //
-    // this.sign_up = function() {
-    //
-    //     console.log(_this.user);
-    //     $http({
-    //         method: 'post',
-    //         url: '/api/users',
-    //         data: {'user': _this.user}
-    //     }).success(function(data) {
-    //         alert("Sign Up Successful");
-    //         console.log(data);
-    //     }).error(function(data) {
-    //         alert("Sign Up Failed");
-    //         console.log(data);
-    //     });
-    // };
+    // $http({
+    //     method: 'post',
+    //     url: '/api/users',
+    //     data: {'user': _this.user}
+    // }).success(function(data) {
+    //     alert("Sign Up Successful");
+    //     console.log(data);
+    // }).error(function(data) {
+    //     alert("Sign Up Failed");
+    //     console.log(data);
+    // });
 });

@@ -14,7 +14,7 @@ dashboard.factory('deviseAuth', [
 
         var loginHttpConfig = function(data) {
             return {
-                method: 'POST',
+                method: 'post',
                 url: loginPath,
                 data: { user: data }
             }
@@ -50,7 +50,7 @@ dashboard.factory('deviseAuth', [
         service.logout = function() {
             var deferred = $q.defer();
             $http({
-                method: 'DELETE',
+                method: 'delete',
                 url: logoutPath
             }).success(function() {
                 // On successful logout, clear currentUser and userCreds from cookie

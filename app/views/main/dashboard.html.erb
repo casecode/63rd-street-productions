@@ -1,13 +1,18 @@
 <div ng-controller="MainCtrl as main">
 
-  <form novalidate class="simple-form" ng-show="main.cookieAuthComplete && !main.loggedIn">
-    E-mail: <input type="email" ng-model="main.userCreds.email" /><br />
-    Password: <input type="password" ng-model="main.userCreds.password" /><br />
-    <button ng-click="main.login()">SIGN IN</button>
-  </form>
+  <div ng-controller="AuthCtrl as auth">
 
-  <button ng-show="main.loggedIn" ng-click="main.logout()">SIGN OUT</button>
+    <form novalidate class="simple-form" ng-show="auth.cookieAuthComplete && !auth.loggedIn">
+      E-mail: <input type="email" ng-model="auth.userCreds.email" /><br />
+      Password: <input type="password" ng-model="auth.userCreds.password" /><br />
+      <button ng-click="auth.login()">SIGN IN</button>
+    </form>
 
-  <div ng-view ng-show="main.loggedIn"></div>
+    <button ng-show="auth.loggedIn" ng-click="auth.logout()">SIGN OUT</button>
+
+    <div ng-view ng-show="auth.loggedIn"></div>
+
+  </div>
+
 
 </div>
