@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   resources :users
   devise_for :users, :skip => [:sessions, :passwords]
   as :user do
+    get '/signin' => 'devise/sessions#new', :as => :new_user_session
     post '/login' => 'devise/sessions#create', defaults: {format: :json}, :as => :user_session
     delete '/logout' => 'devise/sessions#destroy', defaults: {format: :json}, :as => :destroy_user_session
   end
