@@ -26,5 +26,10 @@ module SixtyThird
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
+
+    # Have Devise respond to html and json
+    config.to_prepare do
+      DeviseController.respond_to :html, :json
+    end
   end
 end
