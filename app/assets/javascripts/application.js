@@ -15,4 +15,6 @@
 //= require angular
 //= require angular-resource
 //= require angular-route
+//= require sixtyThirdApp
+//= require_tree ./angular
 //= require_tree .
