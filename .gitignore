@@ -15,4 +15,4 @@
 /config/secrets.yml
 
 # Ignore database config
-/config/mongoid.yml
+/config/database.yml

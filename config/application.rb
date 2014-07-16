@@ -2,7 +2,7 @@ require File.expand_path('../boot', __FILE__)
 
 # Pick the frameworks you want:
 require "active_model/railtie"
-# require "active_record/railtie"
+require "active_record/railtie"
 require "action_controller/railtie"
 require "action_mailer/railtie"
 require "action_view/railtie"
@@ -26,13 +26,5 @@ module SixtyThird
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
     # config.i18n.default_locale = :de
-
-    # Use bower to manage front-end dependencies
-    config.assets.paths << Rails.root.join("vendor","assets","bower_components")
-
-    # Have Devise only respond to json
-    config.to_prepare do
-      DeviseController.respond_to :html, :json
-    end
   end
 end
