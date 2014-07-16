@@ -1,6 +1,9 @@
 class MainController < ApplicationController
 
   def public_home
+    respond_to do |format|
+      format.html {render :layout => 'public_app'}
+    end
   end
 
   def robots
